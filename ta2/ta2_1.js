@@ -34,3 +34,39 @@ function convertToFahrenheit(){
 }
 
 document.getElementById("botonAF").addEventListener("click", convertToFahrenheit);
+
+
+function leapYears(){
+    const year = parseInt(document.getElementById("year").value);
+    let result = false;
+    if (year % 4 === 0 && year % 100 !== 0 || year % 400 === 0) {
+        result = true;
+    }
+    document.getElementById("resultBisiesto").innerHTML = "";
+    document.getElementById("resultBisiesto").innerHTML = result;
+}
+
+document.getElementById("botonBisiesto").addEventListener("click", leapYears);
+
+
+let arr =  [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+function mostrarArreglo() {
+    const arregloDiv = document.getElementById("arregloNumeros");
+    arregloDiv.innerHTML = ""; // Limpiar el contenido previo
+
+    arr.forEach(elemento => {
+        const p = document.createElement("p");
+        p.textContent = elemento;
+        arregloDiv.appendChild(p);
+    });
+}
+
+document.getElementById("botonArreglo").addEventListener("click", mostrarArreglo);
+
+
+
+
+
+
+
