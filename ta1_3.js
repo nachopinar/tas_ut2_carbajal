@@ -1,4 +1,4 @@
-let arreglo = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+let arreglo = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 2, 4];
 
 function mostrarArreglo() {
     const arregloDiv = document.getElementById("arregloNumeros");
@@ -29,5 +29,33 @@ function getOdds() {
 
 document.getElementById("botonImpares").addEventListener("click", getOdds);
 
+function duplicates(){
+    let repeticiones = {};
+    let duplicados = {}
+    arreglo.forEach(numero => {
+      repeticiones[numero] = (repeticiones[numero] || 0) + 1; //si no esta arranca en 0, si no suma 1 cada vez que aparece
+    });
+
+    Object.keys(repeticiones).forEach(numero => {
+        if(repeticiones[numero] > 1){
+            duplicados[numero] = repeticiones[numero];
+        }
+    });
+
+    const resultado = document.getElementById("duplicados");
+    resultado.innerHTML = " ";
+
+    Object.keys(duplicados).forEach(numero => {
+        const h4 = document.createElement("h4");
+        h4.textContent = numero;
+        resultado.appendChild(h4);
+
+        const p = document.createElement("p");
+        p.textContent = "Apariciones: " + duplicados[numero];
+        resultado.appendChild(p);
+    });
+   
+}
+document.getElementById("botonDuplicados").addEventListener("click", duplicates); 
 
 
