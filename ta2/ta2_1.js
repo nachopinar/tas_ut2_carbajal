@@ -65,6 +65,18 @@ function mostrarArreglo() {
 document.getElementById("botonArreglo").addEventListener("click", mostrarArreglo);
 
 
+function getSum(){
+    let sum = 0;
+    for (let i = 0; i < arr.length; i++) {
+        sum += arr[i];
+    }
+    document.getElementById("sumaArreglo").innerHTML = "";
+    document.getElementById("sumaArreglo").innerHTML = sum;
+}
+
+document.getElementById("botonSumaArreglo").addEventListener("click", getSum);
+
+
 
 
 
